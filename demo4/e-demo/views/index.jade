@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  p #{msg}
+  ul.list 
+      -var arr=['a','b','c']
+      each item in arr
+        li #{item}
+  img(src='/images/1.jpg')
