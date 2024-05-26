@@ -27,8 +27,9 @@ form .form-group{
   justify-content: space-between;
 }
 form input{
-  width: 338px;
+  width: 318px;
   height: 40px;
+  padding: 0 10px;
   margin-left: 20px;
   border-radius: 12px;
 }
@@ -37,7 +38,7 @@ form label{
   font-size: 24px;
   font-weight: 600;
 }
-form button{
+form input[type='submit']{
   margin-top: 32px;
   width: 100%;
   line-height: 40px;

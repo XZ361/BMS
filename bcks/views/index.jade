@@ -10,11 +10,11 @@ html
         h1
           img(src='/images/pic_logo_shouye.png')
         div 官网后台管理  
-      form(action="" method="")
+      form(action="/admin/main" method="post")
         div.form-group 
           label 用户名
-          input(type='text',name='user')
+          input(type='text',name='userName')
         div.form-group
           label 密码
-          input(type='password',name='password') 
-        button 登录
+          input(type='password',name='userPwd') 
+        input(type="submit",value="登录") 
