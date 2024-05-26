@@ -1,0 +1,49 @@
+.container{
+  width: 100vw;
+  height: 100vh;
+  color: #fff;
+  background: url('/images/pic_background_Products.png') no-repeat;
+  background-size: 100% 100%;
+  overflow:hidden;
+}
+header{
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  font-size: 24px;
+  font-weight: 600;
+}
+form{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+form .form-group + .form-group{
+  margin-top: 20px;
+}
+form .form-group{
+  display: flex;
+  justify-content: space-between;
+}
+form input{
+  width: 338px;
+  height: 40px;
+  margin-left: 20px;
+  border-radius: 12px;
+}
+form label{
+  line-height: 40px;
+  font-size: 24px;
+  font-weight: 600;
+}
+form button{
+  margin-top: 32px;
+  width: 100%;
+  line-height: 40px;
+  font-size: 23px;
+  font-weight: 300;
+  color: #fff;
+  background-color: #047bfb;
+  border-radius: 12px;
+}
