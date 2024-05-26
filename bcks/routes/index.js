@@ -8,7 +8,6 @@ router.get("/", function (req, res, next) {
 });
 router.post("/main", function (req, res, next) {
   let { userName, userPwd } = req.body;
-  res.writeHead(200, { "Content-Type": "text/html;charset=utf8" });
 
   db.query(
     "select * from user where userName=? and userPwd=?",
@@ -17,9 +16,10 @@ router.post("/main", function (req, res, next) {
       if (err) {
         throw err;
       } else if (data.length > 0) {
-        res.end("登陆成功");
+        res.render("main");
       } else {
-        res.end("登陆失败");
+        res.writeHead(200, { "Content-Type": "text/html;charset=utf8" });
+        res.end("用户名或密码有误！");
       }
     }
   );
