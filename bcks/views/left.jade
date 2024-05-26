@@ -1,0 +1,56 @@
+doctype html
+html
+  head
+    title 后台管理系统
+    link(rel='stylesheet', href='/stylesheets/common.css')
+    link(rel='stylesheet', href='/stylesheets/left.css')
+  body
+    div.nav-left
+      h3 
+        img(src='/images/pic_logo_shouye.png')
+      ul
+        li
+          div.menu.active  
+            img(src='/images/icon_shouye.png')
+            span 首页
+            img.down(src='/images/icon_you_s.png')
+          ul 
+            li.menu 
+              img(src='/images/icon_banner.png')
+              a(href='#') banner图
+            li.menu 
+              img(src='/images/icon_class.png')
+              a(href='#') 开班计划
+            li.menu 
+              img(src='/images/icon_kecheng.png')
+              a(href='#') 课程体系
+            li.menu 
+              img(src='/images/icon_qiye.png')
+              a(href='#') 企业级项目
+        li
+          div.menu  
+            img(src='/images/icon_jiuye.png')
+            span 成功就业
+            img.down(src='/images/icon_you_s.png')
+        li
+          div.menu  
+            img(src='/images/icon_women.png')
+            span 关于我们
+            img.down(src='/images/icon_you_s.png')
+      div.out 退出登录 
+  script(src='/javascripts/jquery.js')
+  script.
+    $(function() {
+      $('.nav-left>ul>li').click(function(){
+        //- 添加一级菜单样式
+        $(this).siblings().find('div.menu').removeClass('active')
+        $(this).find('div.menu').addClass('active')
+        //- 更换箭头
+        $(this).siblings().find('.down').attr('src','/images/icon_you_s.png')
+        $(this).find('.down').attr('src','/images/icon_down.png')
+        //- 展开收起
+        $(this).siblings().find('ul').slideUp(200)
+        $(this).find('ul').slideDown(200)
+      })
+    });
+    
