@@ -18,7 +18,7 @@ html
             input(type="text") 
             div
               img(src="/images/icon_fangda.png", alt="")
-          button 添加
+          button.addBtn 添加
         div.content 
           table.table 
             thead
@@ -37,3 +37,31 @@ html
                   td 
                     img.edit(src="/images/btn_chakan.png", alt="")
                     img.del(src="/images/btn_shanchu.png", alt="")
+    div.dialog.isDialog
+    div.dialog-wrap.isDialog
+      div.dialog-header
+        h3 添加banner图
+        div.close 
+          img(src="/images/icon_guanbi.png", alt="")
+      form(action="/addBanner" enctype="multipart/form-data" method='post') 
+        div
+          p 图标名称
+          p 
+            input(type="text" class='form-control' name='imgName')
+        div 
+          p 图片地址
+          p 
+            input(type="file" class='upload-input' name='pic' id='uploadInput')
+        div.dialog-footer
+          button.cancel 取消
+          button.confirm 确定
+  script(src='/javascripts/jquery.js')
+  script.
+    $(function(){
+      $('.addBtn').click(function(){
+        $('.isDialog').show()
+      })
+      $('.close,.cancel').click(function(){
+        $('.isDialog').hide()
+      })
+    })
