@@ -1,0 +1,133 @@
+.container1 {
+  width: 100vw;
+  height: 100vh;
+  background-color: #15151d;
+  overflow: hidden;
+}
+.main {
+  padding: 20px 30px;
+  overflow: hidden;
+}
+.select {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 30px;
+  background-color: #1b1c21;
+  border-radius: 24px;
+}
+.select select {
+  padding: 0 20px;
+  width: 350px;
+  height: 40px;
+  color: #999999;
+  background-color: #fff;
+  border-radius: 12px;
+  border: 0px;
+  outline: none;
+}
+.select .search {
+  display: flex;
+  width: 560px;
+  height: 40px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.select .search input {
+  flex: 1;
+}
+.select .search div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 40px;
+  background-color: #067bfb;
+}
+.select .search div img {
+  width: 25px;
+  height: 25px;
+}
+.select button {
+  width: 70px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 12px;
+  color: #fff;
+  background-color: #067bfb;
+  text-align: center;
+}
+.content{
+  margin-top: 30px;
+  background-color: #1b1c21;
+  border-radius: 24px;
+}
+.table{
+  width: 100%;
+  text-align: center;
+}
+.table tr{
+  color: #fff;
+}
+.table thead tr{
+  height: 64px;
+}
+.table th{
+  text-align: center;
+}
+.table tbody tr td{
+  line-height: 48px;
+}
+.dialog{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  opacity: .5;
+  overflow: hidden;
+}
+.dialog-wrap{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 460px;
+  z-index: 999;
+  padding: 20px;
+  border-radius: 24px;
+  background-color: #fff;
+  margin-left: -120px;
+  transform: translate(-50%,-50%);
+}
+.dialog-header{
+  position: relative;
+}
+.dialog-header >div{
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.close{
+  cursor: pointer;
+}
+form>div{
+  margin:20px 0;
+}
+.dialog-footer{
+  text-align: right;
+} 
+.dialog-footer button,.dialog-footer span{
+  display: inline-block;
+  padding: 6px 10px ;
+  color: #fff;
+  background-color: #067bfb;
+  cursor: pointer;
+}
+.dialog-footer button{
+  margin-left: 20px;
+}
+.isDialog{
+  display: none;
+}
