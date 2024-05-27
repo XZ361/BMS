@@ -8,6 +8,7 @@ var indexRouter = require("./routes/index");
 var leftRouter = require("./routes/left");
 var rightRouter = require("./routes/right");
 var bannerListRouter = require("./routes/bannerList");
+var addBanner = require("./routes/addBanner");
 
 var app = express();
 
@@ -25,6 +26,7 @@ app.use("/admin", indexRouter);
 app.use("/left", leftRouter);
 app.use("/right", rightRouter);
 app.use("/bannerList", bannerListRouter);
+app.use("/addBanner", addBanner);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

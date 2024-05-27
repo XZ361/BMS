@@ -109,16 +109,24 @@
   right: 0;
   top: 0;
 }
+.close{
+  cursor: pointer;
+}
 form>div{
   margin:20px 0;
 }
 .dialog-footer{
   text-align: right;
 } 
-.dialog-footer button{
+.dialog-footer button,.dialog-footer span{
+  display: inline-block;
   padding: 6px 10px ;
   color: #fff;
   background-color: #067bfb;
+  cursor: pointer;
+}
+.dialog-footer button{
+  margin-left: 20px;
 }
 .isDialog{
   display: none;
