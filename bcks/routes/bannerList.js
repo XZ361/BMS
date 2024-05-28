@@ -8,7 +8,16 @@ router.get("/", function (req, res, next) {
     if (err) {
       throw err;
     } else {
-      res.render("bannerList", { bannerList: data });
+      let pager = {},
+        pageSize = 5,
+        pageCurrent = 1;
+      let dataList = data.slice((pageCurrent - 1) * 5, pageCurrent * pageSize);
+      pager.maxNum = data.length;
+      pager.pages = Math.ceil(pager.maxNum / pageSize);
+      res.render("bannerList", {
+        bannerList: dataList,
+        pager,
+      });
     }
   });
 });

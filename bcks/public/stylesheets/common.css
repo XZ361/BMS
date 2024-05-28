@@ -3,7 +3,12 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
+ul{
+  list-style: none;
+}
+li>a{
+  text-decoration: none;
+}
 a {
   color: #00B7FF;
   text-decoration: none;

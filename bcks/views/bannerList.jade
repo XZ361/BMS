@@ -37,6 +37,26 @@ html
                   td 
                     img.edit(src="/images/btn_chakan.png", alt="")
                     img.del(src="/images/btn_shanchu.png", alt="")
+          div.page 
+            ul.pagination 
+              li.page-item.disabled
+                a(href='javascript:;') 共#{pager.maxNum}条
+              li.page-item.disabled
+                a(href='javascript:;') 总#{pager.pages}页
+              li.page-item.disabled
+                a(href='javascript:;') 首页
+              li.page-item
+                a(href='javascript:;') 上一页
+              li.page-item
+                a(href='javascript:;') 1
+              li.page-item
+                a(href='javascript:;') 2
+              li.page-item
+                a(href='javascript:;') 3
+              li.page-item
+                a(href='javascript:;') 下一页
+              li.page-item.disabled
+                a(href='javascript:;') 尾页
     div.dialog.isDialog
     div.dialog-wrap.isDialog
       div.dialog-header
