@@ -46,7 +46,7 @@ html
               li.page-item.disabled
                 a(href='/bannerList?page='+1) 首页
               li.page-item
-                a(href='javascript:;') 上一页
+                a.head(href='/bannerList?page='+parseInt(parseInt(pager.pageCurrent)-1) alt='xx') 上一页
               li.page-item
                 -parent
                   for i in parent.prev
@@ -55,9 +55,9 @@ html
                   for i in parent.total
                     a(href='/bannerList?page='+i alt='xx') #{i}
               li.page-item
-                a(href='javascript:;') 下一页
-              li.page-item.disabled
-                a(href='/bannerList?page='+pager.pages) 尾页
+                a(href='/bannerList?page='+parseInt(parseInt(pager.pageCurrent)+1)) 下一页
+              li.page-item
+                a.last(href='/bannerList?page='+pager.pages) 尾页
     div.dialog.isDialog
     div.dialog-wrap.isDialog
       div.dialog-header
