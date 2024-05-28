@@ -4,19 +4,44 @@ var db = require("../sql.js");
 
 router.get("/", function (req, res, next) {
   let { name, imgurl } = req.body;
+  let pageNum = req.query.page;
+
   db.query("select * from banner", [name, imgurl], (err, data) => {
     if (err) {
       throw err;
     } else {
-      let pager = {},
-        pageSize = 5,
-        pageCurrent = 1;
-      let dataList = data.slice((pageCurrent - 1) * 5, pageCurrent * pageSize);
+      let pager = {};
+      let parent = [];
+
+      pager.pageSize = 5;
+      pager.pageCurrent = pageNum || 1;
+      // prev.length = pager.pageCurrent - 1;
+      // total.length = 10 - pager.pageCurrent;
+
+      let dataList = data.slice(
+        (pager.pageCurrent - 1) * 5,
+        pager.pageCurrent * pager.pageSize
+      );
       pager.maxNum = data.length;
-      pager.pages = Math.ceil(pager.maxNum / pageSize);
+      pager.pages = Math.ceil(pager.maxNum / pager.pageSize);
+
+      let prevP = pager.pageCurrent > 1 ? pager.pageCurrent : 1;
+      let nextP = pager.pages < 10 ? pager.pages : 10;
+
+      parent.total = {};
+      parent.prev = {};
+
+      for (let i = 1; i < prevP; i++) {
+        parent.prev[i] = i;
+      }
+      for (let i = parseInt(pager.pageCurrent) + 1; i <= nextP; i++) {
+        parent.total[i] = i;
+      }
+
       res.render("bannerList", {
         bannerList: dataList,
         pager,
+        parent,
       });
     }
   });

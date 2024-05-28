@@ -44,19 +44,20 @@ html
               li.page-item.disabled
                 a(href='javascript:;') 总#{pager.pages}页
               li.page-item.disabled
-                a(href='javascript:;') 首页
+                a(href='/bannerList?page='+1) 首页
               li.page-item
                 a(href='javascript:;') 上一页
               li.page-item
-                a(href='javascript:;') 1
-              li.page-item
-                a(href='javascript:;') 2
-              li.page-item
-                a(href='javascript:;') 3
+                -parent
+                  for i in parent.prev
+                    a(href='/bannerList?page='+i alt='') #{i}
+                  a.active(href='/bannerList?page='+pager.pageCurrent) #{pager.pageCurrent}
+                  for i in parent.total
+                    a(href='/bannerList?page='+i alt='xx') #{i}
               li.page-item
                 a(href='javascript:;') 下一页
               li.page-item.disabled
-                a(href='javascript:;') 尾页
+                a(href='/bannerList?page='+pager.pages) 尾页
     div.dialog.isDialog
     div.dialog-wrap.isDialog
       div.dialog-header

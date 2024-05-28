@@ -140,15 +140,19 @@ form>div{
 }
 .page ul li{
   /* width:; */
-  height: 2vh;
-  padding: 20px 0px;
+  /* height: 2vh; */
+  display: inline-block;
+  /* padding: 20px 0px; */
   /* margin-right: 6px; */
 }
 .page ul li a{
-  display: inline-block;
   padding: 5px;
   text-decoration: none;
   color: #060505;
   background-color: #fff;
   border-right: 1px solid #000;
+}
+.page ul li a.active{
+  background-color: #067bfb;
+  color: #fff;
 }
