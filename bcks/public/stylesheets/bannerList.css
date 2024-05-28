@@ -64,6 +64,7 @@
 .table{
   width: 100%;
   text-align: center;
+  margin-bottom: 0!important;
 }
 .table tr{
   color: #fff;
@@ -130,4 +131,28 @@ form>div{
 }
 .isDialog{
   display: none;
+}
+.page{
+  width: 100%;
+  padding: 20px;
+  color: #fff;
+  border-top: 1px solid #ccc;
+}
+.page ul li{
+  /* width:; */
+  /* height: 2vh; */
+  display: inline-block;
+  /* padding: 20px 0px; */
+  /* margin-right: 6px; */
+}
+.page ul li a{
+  padding: 5px;
+  text-decoration: none;
+  color: #060505;
+  background-color: #fff;
+  border-right: 1px solid #000;
+}
+.page ul li a.active{
+  background-color: #067bfb;
+  color: #fff;
 }
