@@ -8,7 +8,7 @@ router.get("/", function (req, res, next) {
   //   console.log(like);
   db.query(`delete from banner where id=${id}`, (err, data) => {
     db.query("select * from banner", (err, data) => {
-      console.log(data.length);
+      //   console.log(data.length);
       if (err) {
         throw err;
       } else {
