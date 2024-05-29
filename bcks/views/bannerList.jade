@@ -9,14 +9,13 @@ html
     div.container1
       div.main 
         div.select
-          form(action="/like", method="get") 
-            select
-              option(value="请选择") 
-              option(value="请选择") 
-              option(value="请选择") 
-              option(value="请选择")
+          form(action="/like", method="get" id='myForm') 
+            select(onChange="submitForm()" name='selectVal')
+              - bannerList
+              each item in bannerList 
+                option(value=`${item.name}`) #{item.name}
             div.search
-              input(type="text" name='searchVal') 
+              input(type="text" name='like') 
               button.searchBtn 
                 img(src="/images/icon_fangda.png", alt="")
             button.addBtn 添加
@@ -79,6 +78,10 @@ html
           button.confirm 确定
   script(src='/javascripts/jquery.js')
   script.
+    function submitForm(){
+      let form = document.getElementById('myForm')
+      form.submit()
+    }
     $(function(){
       $('.addBtn').click(function(){
         $('.isDialog').show()
