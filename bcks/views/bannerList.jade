@@ -9,15 +9,15 @@ html
     div.container1
       div.main 
         div.select
-          select
-            option(value="请选择") 
-            option(value="请选择") 
-            option(value="请选择") 
-            option(value="请选择")
-          div.search
-            input(type="text") 
-            div
-              img(src="/images/icon_fangda.png", alt="")
+          form(action="/like", method="get" id='myForm') 
+            select(onChange="submitForm()" name='selectVal')
+              - bannerList
+              each item in bannerList 
+                option(value=`${item.name}`) #{item.name}
+            div.search
+              input(type="text" name='like') 
+              button.searchBtn 
+                img(src="/images/icon_fangda.png", alt="")
           button.addBtn 添加
         div.content 
           table.table 
@@ -36,7 +36,7 @@ html
                   td #{item.imgurl}
                   td 
                     img.edit(src="/images/btn_chakan.png", alt="")
-                    img.del(src="/images/btn_shanchu.png", alt="")
+                    img.del(src="/images/btn_shanchu.png", alt='' data-id=`${item.id}`)
           div.page 
             ul.pagination 
               li.page-item.disabled
@@ -76,13 +76,38 @@ html
         div.dialog-footer
           span.cancel 取消
           button.confirm 确定
+    div.dialog.isDel
+    div.dialog-wrap.isDel
+      div.del-header
+        div.header
+          h4 确定是否删除？
+          div.closeDel 
+            img(src="/images/icon_guanbi.png", alt="")
+        div.dialog-footer
+          span.cancelDel 取消
+          button.confirmDel 确定
   script(src='/javascripts/jquery.js')
   script.
+    function submitForm(){
+      let form = document.getElementById('myForm')
+      form.submit()
+    }
     $(function(){
+      var id='' 
       $('.addBtn').click(function(){
         $('.isDialog').show()
       })
       $('.close,.cancel').click(function(){
         $('.isDialog').hide()
+      })
+      $('.del').click(function(){
+        id = $(this).context.dataset.id
+        $('.isDel').show()
+      })
+      $('.closeDel,.cancelDel').click(function(){
+        $('.isDel').hide()
+      })
+      $('.confirmDel').click(function(){
+        window.location.href=`/del?id=${id}`
       })
     })
