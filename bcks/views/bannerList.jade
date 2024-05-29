@@ -9,16 +9,17 @@ html
     div.container1
       div.main 
         div.select
-          select
-            option(value="请选择") 
-            option(value="请选择") 
-            option(value="请选择") 
-            option(value="请选择")
-          div.search
-            input(type="text") 
-            div
-              img(src="/images/icon_fangda.png", alt="")
-          button.addBtn 添加
+          form(action="/like", method="get") 
+            select
+              option(value="请选择") 
+              option(value="请选择") 
+              option(value="请选择") 
+              option(value="请选择")
+            div.search
+              input(type="text" name='searchVal') 
+              button.searchBtn 
+                img(src="/images/icon_fangda.png", alt="")
+            button.addBtn 添加
         div.content 
           table.table 
             thead
