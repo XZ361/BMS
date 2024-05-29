@@ -5,7 +5,7 @@ var db = require("../sql.js");
 router.get("/", function (req, res, next) {
   let like = req.query.like || req.query.selectVal;
 
-  console.log(like);
+  //   console.log(like);
   let pageNum = req.query.page;
   db.query(`select * from banner where name like "%${like}%"`, (err, data) => {
     if (err) {
