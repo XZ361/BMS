@@ -11,6 +11,7 @@ var bannerListRouter = require("./routes/bannerList");
 var addBanner = require("./routes/addBanner");
 var like = require("./routes/like");
 var del = require("./routes/del");
+var update = require("./routes/update");
 
 var app = express();
 
@@ -31,6 +32,7 @@ app.use("/bannerList", bannerListRouter);
 app.use("/addBanner", addBanner);
 app.use("/like", like);
 app.use("/del", del);
+app.use("/update", update);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

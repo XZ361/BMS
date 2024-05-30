@@ -35,7 +35,7 @@ html
                   td #{item.name}
                   td #{item.imgurl}
                   td 
-                    img.edit(src="/images/btn_chakan.png", alt="")
+                    img.edit(src="/images/btn_chakan.png", alt="" data-id=`${item.id}` data-name=`${item.name}`)
                     img.del(src="/images/btn_shanchu.png", alt='' data-id=`${item.id}`)
           div.page 
             ul.pagination 
@@ -76,6 +76,27 @@ html
         div.dialog-footer
           span.cancel 取消
           button.confirm 确定
+    div.dialog-wrap.isUpdate
+      div.dialog-header
+        h3 修改banner图
+        div.close 
+          img(src="/images/icon_guanbi.png", alt="")
+      form(action="/update" enctype="multipart/form-data" method='post')
+        div
+          p ID
+          p 
+            input.isId(type="text" class='form-control' name='id' value='') 
+        div
+          p 图标名称
+          p 
+            input.isName(type="text" class='form-control' name='imgName' value='')
+        div 
+          p 图片地址
+          p 
+            input(type="file" class='upload-input' name='pic' id='uploadInput')
+        div.dialog-footer
+          span.cancel 取消
+          input.confirm(type='submit' value='确定')   
     div.dialog.isDel
     div.dialog-wrap.isDel
       div.del-header
@@ -109,5 +130,18 @@ html
       })
       $('.confirmDel').click(function(){
         window.location.href=`/del?id=${id}`
+      })
+      $('.edit').click(function(){
+        var uid = $(this).context.dataset.id
+        var uname = $(this).context.dataset.name
+        $('.isDialog').show()
+        $('.isUpdate').show()
+        //- $()
+        //- $('.isId')[0].attributes.name.value
+        $('.isId')[0].attributes.value.value = uid
+        $('.isName')[0].attributes.value.value = uname
+      })
+      $('.close,.cancel').click(function(){
+        $('.isUpdate').hide()
       })
     })
